@@ -57,7 +57,7 @@ PRIMARY KEY(ID)
 CREATE TABLE SECURITIES (
   Symbol VARCHAR(6) NOT NULL,
   SectorID INT NOT NULL,
-  CompanyName VARCHAR(30) NOT NULL,
+  CompanyName VARCHAR(100) NOT NULL,
   FOREIGN KEY (SectorID) references SECTOR(ID),
   PRIMARY KEY(Symbol)
 );
@@ -68,7 +68,7 @@ LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/forcast-relation-small.txt
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/sector-relation-small.txt' INTO TABLE TRADES
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/trade-relation-small.txt' INTO TABLE TRADES
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
@@ -76,8 +76,8 @@ LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/security-relation-small.tx
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/trade-relation-small.txt' INTO TABLE SECTOR
-LINES TERMINATED BY ','
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/sector-relation-small.txt' INTO TABLE SECTOR
+FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
 
