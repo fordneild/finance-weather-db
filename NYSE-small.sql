@@ -17,9 +17,6 @@ constraint ValidMonth check(MM > 0 AND MM < 13),
 PRIMARY KEY(ID)
 );
 
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/date-relation-small.txt' INTO TABLE DATES
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n';
 
 CREATE TABLE FORECAST (
 
@@ -63,16 +60,11 @@ CREATE TABLE SECURITIES (
 );
 
 
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/date-relation-small.txt' INTO TABLE DATES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
 
 LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/forcast-relation-small.txt' INTO TABLE FORECAST
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n';
-
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/trade-relation-small.txt' INTO TABLE TRADES
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n';
-
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/security-relation-small.txt' INTO TABLE SECURITIES
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
@@ -80,5 +72,11 @@ LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/sector-relation-small.txt'
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/security-relation-small.txt' INTO TABLE SECURITIES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
 
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/trade-relation-small.txt' INTO TABLE TRADES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
 

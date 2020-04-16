@@ -32,13 +32,9 @@ for line_index, line in enumerate(lines):
         line_split[1] = line_split[1][1:-1]
         line_split[2]= line_split[2][1:-1]
         line_split[3]= line_split[3][1:-1]
-        # print(line_split)
-        # print(line_split)
         cleanedForcastLines.append(",".join(line_split) + '\n')
 
 forcastFile.writelines(cleanedForcastLines)
-# print(dates)
-
 
 
     
