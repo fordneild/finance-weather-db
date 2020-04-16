@@ -17,7 +17,9 @@ constraint ValidMonth check(MM > 0 AND MM < 13),
 PRIMARY KEY(ID)
 );
 
-LOAD DATA LOCAL INFILE 'date-relation-small.txt' INTO TABLE DATES; 
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/date-relation-small.txt' INTO TABLE DATES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
 
 CREATE TABLE FORECAST (
 
@@ -25,7 +27,7 @@ DateID INT NOT NULL,
 Precipitation decimal(5,2) NOT NULL,
 MaxTemp INT NOT NULL,
 MinTemp INT NOT NULL,
-FOREIGN KEY (DateID) references Dates(ID),
+FOREIGN KEY (DateID) references DATES(ID),
 PRIMARY KEY (DateID, Precipitation, MaxTemp, MinTemp)
 
 );
@@ -62,10 +64,21 @@ CREATE TABLE SECURITIES (
 
 
 
-LOAD DATA LOCAL INFILE 'forcast-relation-small.txt' INTO TABLE FORECAST;
-LOAD DATA LOCAL INFILE 'sector-relation-small.txt' INTO TABLE TRADES;
-LOAD DATA LOCAL INFILE 'security sector-relation-small.txt' INTO TABLE SECURITIES;
-LOAD DATA LOCAL INFILE 'trade-relation-small.txt' INTO TABLE SECTOR;
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/forcast-relation-small.txt' INTO TABLE FORECAST
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/sector-relation-small.txt' INTO TABLE TRADES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/security-relation-small.txt' INTO TABLE SECURITIES
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/trade-relation-small.txt' INTO TABLE SECTOR
+LINES TERMINATED BY ','
+LINES TERMINATED BY '\n';
 
 
 
