@@ -9,8 +9,7 @@ for line_index, line in enumerate(Lines):
     sector = line_split[-1].strip()
     if sector not in sectors:
         sectors[sector] = len(sectors.keys())+1
-    # if sector not in sectors:
-    #     sectors.append(sector)
-    cleanedLines[line_index] = line_split[0] + ',' + line_split[1] + ',' + str(sectors[sector]) + '\n'
+
+    cleanedLines[line_index] = line_split[0] + ',' + str(sectors[sector]) + ',' + line_split[1] + '\n'
 
 file2.writelines(cleanedLines)
