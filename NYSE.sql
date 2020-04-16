@@ -64,7 +64,7 @@ LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/date-relation.txt' INTO TA
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
-LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/forcast-relation.txt' INTO TABLE FORECAST
+LOAD DATA LOCAL INFILE 'db_project/finance-weather-db/forecast-relation.txt' INTO TABLE FORECAST
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 
